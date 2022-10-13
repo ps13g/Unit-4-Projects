@@ -4,7 +4,7 @@ public class GuessTheNumber {
         Scanner random = new Scanner(System.in);
         int guessNumber;
         int guess;
-
+        int attempts = 0;
         guessNumber = (int) (Math.random()*100+1);
         System.out.println("You will have to guess a number 1-100 in the fewest amount of tries possible. The system will tell you if you are too high or too low.");
         System.out.println("Enter your number: ");
@@ -18,8 +18,10 @@ public class GuessTheNumber {
             }
             System.out.println("Guess Again!");
             guess = random.nextInt();
+            attempts++;
         }
-        System.out.println("Great job! You got the number");
+        attempts++;
+        System.out.println("Great job! You got the number in " + attempts + " guesses");
     }
 
 }
